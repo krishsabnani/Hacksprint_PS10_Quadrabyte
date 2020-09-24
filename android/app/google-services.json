@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "35598223816",
+    "firebase_url": "https://hacksprint-ps10-quadrabyte.firebaseio.com",
+    "project_id": "hacksprint-ps10-quadrabyte",
+    "storage_bucket": "hacksprint-ps10-quadrabyte.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:35598223816:android:8511a682d5c62094c518fd",
+        "android_client_info": {
+          "package_name": "com.example.hacksprintps10quadrabyte"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "35598223816-6gtni4p9k7q54dgpcckfieqqp9c6n6fn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdqLsy2FWZiOryET3Aghda25YGIPVyzCw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "35598223816-6gtni4p9k7q54dgpcckfieqqp9c6n6fn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
