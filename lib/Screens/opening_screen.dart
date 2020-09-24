@@ -1,4 +1,3 @@
-import 'package:Homesystem/theme/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -28,7 +27,7 @@ class OpeningView extends StatelessWidget {
           ),
         ),
         onPressed: () {
-          Navigator.of(context).pushNamed(AppRoutes.authLogin);
+          //Navigator.of(context).pushNamed(AppRoutes.authLogin);
         },
       ),
     );
@@ -50,7 +49,7 @@ class OpeningView extends StatelessWidget {
           ),
         ),
         onPressed: () {
-          Navigator.of(context).pushNamed(AppRoutes.authRegister);
+          //Navigator.of(context).pushNamed(AppRoutes.authRegister);
         },
       ),
     );

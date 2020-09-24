@@ -1,4 +1,3 @@
-import 'package:Homesystem/theme/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -162,7 +161,7 @@ class _RegisterViewState extends State<Register> {
             ),
             MaterialButton(
               onPressed: () {
-                Navigator.of(context).pushNamed(AppRoutes.authLogin);
+                //Navigator.of(context).pushNamed(AppRoutes.authLogin);
               },
               child: Text(
                 "Login",

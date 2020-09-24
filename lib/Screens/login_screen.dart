@@ -1,4 +1,3 @@
-import 'package:Homesystem/theme/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -140,7 +139,7 @@ class _LoginViewState extends State<Login> {
             ),
             MaterialButton(
               onPressed: () {
-                Navigator.of(context).pushNamed(AppRoutes.authRegister);
+                //Navigator.of(context).pushNamed(AppRoutes.authRegister);
               },
               child: Text(
                 "Sign up",
