@@ -7,6 +7,7 @@ class User {
   double dailyAllowed;
   double saveAmt;
   double expAmt;
+  double specialEvent;
 
   User(
       {this.name,
@@ -16,7 +17,8 @@ class User {
         this.savePercent,
         this.dailyAllowed,
         this.saveAmt,
-        this.expAmt});
+        this.expAmt,
+        this.specialEvent});
 
   User.fromJson(Map<String, dynamic> json) {
     name = json['name'];
@@ -27,6 +29,7 @@ class User {
     dailyAllowed = json['dailyAllowed'];
     saveAmt = json['saveAmt'];
     expAmt = json['expAmt'];
+    specialEvent = json['specialEvent'];
   }
 
   Map<String, dynamic> toJson() {
@@ -39,6 +42,7 @@ class User {
     data['dailyAllowed'] = this.dailyAllowed;
     data['saveAmt'] = this.saveAmt;
     data['expAmt'] = this.expAmt;
+    data['specialEvent'] = this.specialEvent;
     return data;
   }
 }

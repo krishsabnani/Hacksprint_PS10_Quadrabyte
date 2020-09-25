@@ -134,9 +134,7 @@ class _LoginViewState extends State<Login> {
           children: <Widget>[
             Text(
               "Don't have an account?",
-              style: Theme.of(context).textTheme.subtitle1.copyWith(
-                    color: Colors.white,
-                  ),
+              style: TextStyle(color:  Colors.white,),
             ),
             MaterialButton(
               onPressed: () {
@@ -144,8 +142,7 @@ class _LoginViewState extends State<Login> {
               },
               child: Text(
                 "Sign up",
-                style: Theme.of(context).textTheme.subtitle1.copyWith(
-                    color: Colors.black, decoration: TextDecoration.underline),
+                style: TextStyle(color:  Colors.white, decoration: TextDecoration.underline),
               ),
             )
           ],

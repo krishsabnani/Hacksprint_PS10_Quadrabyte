@@ -41,17 +41,11 @@ dependencies:
   csv:
   intl:
   shared_preferences:
-  
-  
-  
-  
-  
-  
-  
   time_formatter: ^1.0.0
   firebase_core: ^0.4.0+9
   firebase_analytics: ^5.0.2
-  google_fonts: ^1.1.0
+  google_fonts:
+  bezier_chart:
 
 
 

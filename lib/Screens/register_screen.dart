@@ -156,9 +156,7 @@ class _RegisterViewState extends State<Register> {
           children: <Widget>[
             Text(
               "Already have an account?",
-              style: Theme.of(context).textTheme.subtitle1.copyWith(
-                    color: Colors.white,
-                  ),
+              style: TextStyle(color:  Colors.white,),
             ),
             MaterialButton(
               onPressed: () {
@@ -166,8 +164,7 @@ class _RegisterViewState extends State<Register> {
               },
               child: Text(
                 "Login",
-                style: Theme.of(context).textTheme.subtitle1.copyWith(
-                    color: Colors.white, decoration: TextDecoration.underline),
+                style: TextStyle(color:  Colors.white, decoration: TextDecoration.underline),
               ),
             )
           ],
