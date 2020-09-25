@@ -23,14 +23,14 @@ class _LoginViewState extends State<Login> {
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
     AuthProvider auth = Provider.of<AuthProvider>(context);
-    ///final logo = Image.asset(
-    /// "images/logo.jpg",
-    /// fit: BoxFit.contain,
-    ///);
+    final logo = Image.asset(
+      "images/logo.jpeg",
+      fit: BoxFit.contain,
+    );
 
     final emailField = TextFormField(
         //enabled: isSubmitting,
-        onSaved: (val){
+        onSaved: (val) {
           user.email = val;
         },
         controller: _emailController,
@@ -49,7 +49,7 @@ class _LoginViewState extends State<Login> {
       children: <Widget>[
         TextFormField(
             //enabled: isSubmitting,
-            onSaved: (val){
+            onSaved: (val) {
               pass = val;
             },
             controller: _passwordController,
@@ -113,12 +113,9 @@ class _LoginViewState extends State<Login> {
         ),
         onPressed: () async {
           _formKey.currentState.save();
-          if (await auth.login(
-              user.email, pass, 'Customer')) {
+          if (await auth.login(user.email, pass, 'Customer')) {
             Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => null));
+                context, MaterialPageRoute(builder: (context) => null));
           }
         },
       ),
@@ -134,17 +131,17 @@ class _LoginViewState extends State<Login> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Text(
-              "Don't have an account?",
-                style: TextStyle(color: Colors.black)
-            ),
+            Text("Don't have an account?",
+                style: TextStyle(color: Colors.black)),
             MaterialButton(
               onPressed: () {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Register()));
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => Register()));
               },
               child: Text(
                 "Sign up",
-                style:TextStyle(color: Colors.black, decoration: TextDecoration.underline),
+                style: TextStyle(
+                    color: Colors.black, decoration: TextDecoration.underline),
               ),
             )
           ],
@@ -162,7 +159,7 @@ class _LoginViewState extends State<Login> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
-                    //logo,
+                    logo,
                     fields,
                     Padding(
                       padding: EdgeInsets.only(bottom: 70),

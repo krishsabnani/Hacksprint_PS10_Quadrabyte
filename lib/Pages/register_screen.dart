@@ -24,15 +24,16 @@ class _RegisterViewState extends State<Register> {
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
     AuthProvider auth = Provider.of<AuthProvider>(context);
-    ///final logo = Image.asset(
-    /// "images/logo.jpg",
-    /// fit: BoxFit.contain,
-    ///);
+    //final logo = Image.asset(
+    //  "images/logo.jpeg",
+    //  height: 180,
+    //  width: 200,
+    //);
     final usernameField = TextFormField(
         //enabled: isSubmitting,
         controller: _usernameController,
-        onSaved: (val){
-        user.name = val;
+        onSaved: (val) {
+          user.name = val;
         },
         style: TextStyle(
           color: Colors.black,
@@ -42,12 +43,11 @@ class _RegisterViewState extends State<Register> {
           labelText: "Username",
           labelStyle: TextStyle(color: Colors.black),
           hintStyle: TextStyle(color: Colors.white),
-
         ));
 
     final emailField = TextFormField(
         //enabled: isSubmitting,
-        onSaved: (val){
+        onSaved: (val) {
           user.email = val;
         },
         controller: _emailController,
@@ -64,13 +64,13 @@ class _RegisterViewState extends State<Register> {
 
     final passwordField = TextFormField(
         //enabled: isSubmitting,
-        onSaved: (val){
+        onSaved: (val) {
           pass = val;
         },
         controller: _passwordController,
         keyboardType: TextInputType.emailAddress,
         style: TextStyle(
-          color: Colors.black,
+          color: Colors.white,
         ),
         decoration: InputDecoration(
           hintText: "password",
@@ -80,7 +80,7 @@ class _RegisterViewState extends State<Register> {
         ));
     final income = TextFormField(
         //enabled: isSubmitting,
-        onSaved: (val){
+        onSaved: (val) {
           user.income = double.parse(val);
         },
         controller: _repasswordController,
@@ -97,7 +97,7 @@ class _RegisterViewState extends State<Register> {
     final target = TextFormField(
         //enabled: isSubmitting,
         controller: _repasswordController,
-        onSaved: (val){
+        onSaved: (val) {
           user.savePercent = double.parse(val);
         },
         keyboardType: TextInputType.emailAddress,
@@ -106,7 +106,7 @@ class _RegisterViewState extends State<Register> {
         ),
         decoration: InputDecoration(
           hintText: "Percentage of income to be saved",
-          labelText: "% of money you want to save",
+          labelText: "% to be saved",
           labelStyle: TextStyle(color: Colors.black),
           hintStyle: TextStyle(color: Colors.white),
         ));
@@ -130,29 +130,25 @@ class _RegisterViewState extends State<Register> {
       borderRadius: BorderRadius.circular(25.0),
       color: Colors.white,
       child: MaterialButton(
-        minWidth: mq.size.width / 1.2,
-        padding: EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 15.0),
-        child: Text(
-          "Register",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 20.0,
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
+          minWidth: mq.size.width / 1.2,
+          padding: EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 15.0),
+          child: Text(
+            "Register",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 20.0,
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        ),
-        onPressed: () async {
-          _formKey.currentState.save();
-          if (await auth.createUser(user, pass)) {
-            print("Registering" + user.email + "10000");
-            Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        Login()));
-          }
-        }
-      ),
+          onPressed: () async {
+            _formKey.currentState.save();
+            if (await auth.createUser(user, pass)) {
+              print("Registering" + user.email + "10000");
+              Navigator.pushReplacement(
+                  context, MaterialPageRoute(builder: (context) => Login()));
+            }
+          }),
     );
     final bottom = Column(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -165,17 +161,17 @@ class _RegisterViewState extends State<Register> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Text(
-              "Already have an account?",
-              style: TextStyle(color: Colors.black)
-            ),
+            Text("Already have an account?",
+                style: TextStyle(color: Colors.black)),
             MaterialButton(
               onPressed: () {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Login()));
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (context) => Login()));
               },
               child: Text(
                 "Login",
-                style: TextStyle(color: Colors.black, decoration: TextDecoration.underline),
+                style: TextStyle(
+                    color: Colors.black, decoration: TextDecoration.underline),
               ),
             )
           ],
@@ -187,7 +183,7 @@ class _RegisterViewState extends State<Register> {
       body: Form(
           key: _formKey,
           child: SingleChildScrollView(
-              padding: EdgeInsets.all(36),
+              padding: EdgeInsets.all(35),
               child: Container(
                 height: mq.size.height,
                 child: Column(

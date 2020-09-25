@@ -10,6 +10,8 @@ import 'package:provider/provider.dart';
 import 'package:hacksprintps10quadrabyte/Screens/Calendar.dart';
 
 import 'Pages/Frontpage.dart';
+import 'Pages/register_screen.dart';
+import 'package:hacksprintps10quadrabyte/Screens/report.dart';
 
 void main() => runApp(MyApp());
 
@@ -24,6 +26,7 @@ class MyApp extends StatelessWidget {
             create: (context) => AuthProvider()),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           // This is the theme of your application.
@@ -37,7 +40,7 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
-        home: Calendar(),
+        home: Report(),
       ),
     );
   }
