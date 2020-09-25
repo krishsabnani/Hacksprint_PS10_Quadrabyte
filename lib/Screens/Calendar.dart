@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hacksprintps10quadrabyte/Providers/auth_provider.dart';
+import 'package:hacksprintps10quadrabyte/Screens/AddExpense.dart';
+import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class Calendar extends StatefulWidget {
@@ -10,29 +14,25 @@ class _CalendarState extends State<Calendar> {
   CalendarController _calendarController = CalendarController();
   @override
   Widget build(BuildContext context) {
-    var mainbody = Column(children: <Widget>[
-      Container(
+    AuthProvider authProvider = Provider.of<AuthProvider>(context);
+    var mainbody = Scaffold(
+      backgroundColor: Colors.white,
+      body: Column(children: <Widget>[
+        Container(
         height: 150,
         width: double.infinity,
-        child: Card(
-          elevation: 0,
-          color: Colors.white,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              const ListTile(
-                leading: Icon(Icons.account_box),
-                title: Text(
-                  "The expense addition page!",
-                  style: TextStyle(fontSize: 20),
-                ),
-                subtitle: Text(
-                  "Here, you can pick and choose the exact amount you want to add for the categories!",
-                  style: TextStyle(fontSize: 15),
-                ),
-              )
-            ],
+        color: Colors.white,
+        child: Center(
+          child: ListTile(
+            leading: Icon(Icons.calendar_today),
+            title: Text(
+              "Log your expenses:",
+              style: TextStyle(fontSize: 24),
+            ),
+            subtitle: Text(
+              "Here you can select the exact date for which\nyou would like to log your expenses.",
+              style: TextStyle(fontSize: 15),
+            ),
           ),
         ),
       ),
@@ -48,10 +48,18 @@ class _CalendarState extends State<Calendar> {
               fontSize: 20,
             )),
         onDaySelected: (date, events) {
-          print(date.toIso8601String());
+          print( DateFormat(DateFormat.YEAR_ABBR_MONTH_DAY)
+              .format(date));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => AddExpense(
+                      authProvider.user.uid,
+                      DateFormat(DateFormat.YEAR_ABBR_MONTH_DAY)
+                          .format(date))));
         },
       )
-    ]);
+    ]));
 
     var backbutton = IconButton(
       icon: Icon(
@@ -64,11 +72,13 @@ class _CalendarState extends State<Calendar> {
 
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.black,
-          leading: backbutton,
+          backgroundColor: Colors.black87,
+          //leading: backbutton,
+          automaticallyImplyLeading: false,
+          centerTitle: true,
           title: Text(
             "Calendar",
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.white, fontSize: 24),
           ),
         ),
         body: mainbody);

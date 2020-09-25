@@ -181,7 +181,7 @@ class HomeState extends State<Home> {
                   child: Card(
                     elevation: 10,
                     child: Container(
-                      height: 330,
+
                       width: MediaQuery.of(context).size.width,
                       child: Column(
                         children: <Widget>[
@@ -191,7 +191,7 @@ class HomeState extends State<Home> {
                               elevation: 1,
                               child: Container(
                                 width: MediaQuery.of(context).size.width,
-                                height: 50,
+                                height: 49,
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,

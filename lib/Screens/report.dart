@@ -12,11 +12,13 @@ class _ReportState extends State<Report> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.black,
-        leading: Icon(Icons.report),
+        backgroundColor: Colors.black87,
+        //leading: backbutton,
+        automaticallyImplyLeading: false,
+        centerTitle: true,
         title: Text(
-          "User report",
-          style: TextStyle(fontStyle: FontStyle.italic),
+          "Profile",
+          style: TextStyle(color: Colors.white, fontSize: 24),
         ),
       ),
       body: Padding(

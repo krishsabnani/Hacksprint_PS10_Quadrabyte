@@ -1,5 +1,6 @@
 import 'package:hacksprintps10quadrabyte/Models/user_model.dart';
 import 'package:hacksprintps10quadrabyte/Pages/Frontpage.dart';
+import 'package:hacksprintps10quadrabyte/Pages/page_host.dart';
 import 'package:hacksprintps10quadrabyte/Pages/register_screen.dart';
 import 'package:hacksprintps10quadrabyte/Pages/routes.dart';
 import 'package:flutter/material.dart';
@@ -120,7 +121,7 @@ class _LoginViewState extends State<Login> {
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => Home()));
+                    builder: (context) => PageHost(0)));
           }
         },
       ),

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:hacksprintps10quadrabyte/Models/expense_model.dart';
+import 'package:hacksprintps10quadrabyte/Pages/page_host.dart';
 import 'package:hacksprintps10quadrabyte/Providers/auth_provider.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -256,7 +257,7 @@ class _AddExpenseState extends State<AddExpense> {
                     _formKey.currentState.save();
                     expenseModel.total = expenseModel.medical + expenseModel.misc + expenseModel.grocery + expenseModel.household + expenseModel.transport;
                     print(expenseModel.total);
-
+                    print("Date :" + date);
                     await Firestore.instance.collection('Expense').document(uid).collection("Dates")
                         .document(date)
                         .setData(expenseModel.toJson())
@@ -266,7 +267,10 @@ class _AddExpenseState extends State<AddExpense> {
 
                     await authProvider.alterData(expenseModel);
 
-                    Navigator.pop(context);
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PageHost(0)));
                   }, child: Center(child: Text("Submit",
                 style: TextStyle(fontSize: 20, color: Colors.white) , ))),
             )
@@ -276,16 +280,19 @@ class _AddExpenseState extends State<AddExpense> {
     ]))]);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.black87,
+        //leading: backbutton,
+        //automaticallyImplyLeading: false,
+        centerTitle: true,
         title: Text(
-          "Add your expenses",
-          style: TextStyle(color: Colors.black),
+          "Add expenses for " + date,
+          style: TextStyle(color: Colors.white, fontSize: 20),
         ),
         leading: IconButton(
           onPressed: (){
             Navigator.pop(context);
           },
-            icon: Icon(Icons.arrow_back, size: 20, color: Colors.black87,)),
+            icon: Icon(Icons.arrow_back, size: 20, color: Colors.white,)),
 
       ),
       body: mainbody,

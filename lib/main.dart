@@ -42,7 +42,6 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: OpeningView(),
-        debugShowCheckedModeBanner: false,
       ),
     );
   }
