@@ -24,10 +24,10 @@ class _LoginViewState extends State<Login> {
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
     AuthProvider auth = Provider.of<AuthProvider>(context);
-    ///final logo = Image.asset(
-    /// "images/logo.jpg",
-    /// fit: BoxFit.contain,
-    ///);
+    final logo = Image.asset(
+      "images/logo.jpeg",
+      fit: BoxFit.contain,
+    );
 
     final emailField = TextFormField(
         //enabled: isSubmitting,
@@ -164,7 +164,7 @@ class _LoginViewState extends State<Login> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
-                    //logo,
+                    logo,
                     fields,
                     Padding(
                       padding: EdgeInsets.only(bottom: 70),

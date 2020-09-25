@@ -9,10 +9,10 @@ class OpeningView extends StatelessWidget {
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
 
-    ///final logo = Image.asset(
-    ///"images/logo.jpg",
-    /// fit: BoxFit.contain,
-    ///);
+    final logo = Image.asset(
+      "images/logo.jpeg",
+      fit: BoxFit.contain,
+    );
     final loginButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(25.0),
@@ -30,7 +30,8 @@ class OpeningView extends StatelessWidget {
           ),
         ),
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Login()));
         },
       ),
     );
@@ -52,7 +53,8 @@ class OpeningView extends StatelessWidget {
           ),
         ),
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => Register()));
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Register()));
         },
       ),
     );
@@ -69,12 +71,13 @@ class OpeningView extends StatelessWidget {
     );
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       body: Padding(
         padding: EdgeInsets.all(36),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
+            logo,
             Padding(
               padding: EdgeInsets.only(top: 50),
             ),
