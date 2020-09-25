@@ -69,7 +69,7 @@ class AuthProvider with ChangeNotifier {
       FirebaseUser fbUser = authResult.user;
       if (fbUser != null) {
         try {
-          await getUserDetails(fbUser.uid, type).then((value) {
+          await getUserDetails(fbUser.uid).then((value) {
             if (value) {
               print("successsssssssssss");
 //              _toasts.showToast("Login Successful!",18);
@@ -102,9 +102,9 @@ class AuthProvider with ChangeNotifier {
         user.toJson());
   }
 
-  Future<bool> getUserDetails(String uid, String type) async {
+  Future<bool> getUserDetails(String uid ) async {
     bool status = false;
-    await Firestore.instance.collection(type).document(uid).get().then((
+    await Firestore.instance.collection("User").document(uid).get().then((
         snapshot) {
       if (snapshot.exists) {
         user = User.fromJson(snapshot.data);

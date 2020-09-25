@@ -113,6 +113,7 @@ class _LoginViewState extends State<Login> {
         ),
         onPressed: () async {
           _formKey.currentState.save();
+          print(user.email + pass);
           if (await auth.login(
               user.email, pass, 'Customer')) {
             Navigator.pushReplacement(
