@@ -26,18 +26,18 @@ class HomeState extends State<Home> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      "Welcome",
+                      "Welcome, (user)",
                       style: GoogleFonts.openSans(
                           textStyle: TextStyle(
                               color: Colors.white,
-                              fontSize: 18,
+                              fontSize: 35,
                               fontWeight: FontWeight.bold)),
                     ),
                     SizedBox(
                       height: 4,
                     ),
                     Text(
-                      "Home",
+                      "User dashboard",
                       style: GoogleFonts.openSans(
                           textStyle: TextStyle(
                               color: Color(0xffa29aac),

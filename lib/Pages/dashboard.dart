@@ -9,7 +9,7 @@ class GridDashboard extends StatelessWidget {
       img: "images/calendar.png");
 
   Items item2 = new Items(
-    title: "Adjust your income",
+    title: "Expenditure",
     subtitle: "Annual income only!",
     event: "4 Items",
     img: "assets/food.png",

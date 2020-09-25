@@ -87,6 +87,7 @@ class _LoginViewState extends State<Login> {
       borderRadius: BorderRadius.circular(25.0),
       color: Colors.white,
       child: MaterialButton(
+        onPressed: null,
         minWidth: mq.size.width / 1.2,
         padding: EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 15.0),
         child: Text(

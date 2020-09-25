@@ -5,6 +5,7 @@ import 'package:hacksprintps10quadrabyte/Models/user_model.dart';
 import 'package:hacksprintps10quadrabyte/Pages/login_screen.dart';
 import 'package:hacksprintps10quadrabyte/Pages/opening_screen.dart';
 import 'package:hacksprintps10quadrabyte/Providers/auth_provider.dart';
+import 'package:hacksprintps10quadrabyte/Screens/AddExpense.dart';
 import 'package:provider/provider.dart';
 
 import 'Pages/Frontpage.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
-        home: Home(),
+        home: AddExpense(),
       ),
     );
   }
