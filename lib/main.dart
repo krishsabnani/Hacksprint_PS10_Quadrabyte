@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:hacksprintps10quadrabyte/Models/user_model.dart';
 import 'package:hacksprintps10quadrabyte/Pages/login_screen.dart';
 import 'package:hacksprintps10quadrabyte/Pages/opening_screen.dart';
+import 'package:hacksprintps10quadrabyte/Pages/splash_screen.dart';
 import 'package:hacksprintps10quadrabyte/Providers/auth_provider.dart';
 import 'package:hacksprintps10quadrabyte/Providers/expense_provider.dart';
 import 'package:hacksprintps10quadrabyte/Screens/AddExpense.dart';
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
-        home: OpeningView(),
+        home: SplashScreen(),
       ),
     );
   }

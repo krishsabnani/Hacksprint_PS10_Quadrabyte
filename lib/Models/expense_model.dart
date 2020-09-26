@@ -6,13 +6,17 @@ class ExpenseModel {
   double misc;
   double total;
 
+  
+
+
   ExpenseModel(
       {this.medical,
         this.grocery,
         this.household,
         this.transport,
         this.misc,
-        this.total});
+        this.total,
+      });
 
   ExpenseModel.fromJson(Map<String, dynamic> json) {
     medical = json['medical'];

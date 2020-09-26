@@ -1,3 +1,4 @@
+import 'package:flutter/rendering.dart';
 import 'package:hacksprintps10quadrabyte/Models/user_model.dart';
 import 'package:hacksprintps10quadrabyte/Pages/Frontpage.dart';
 import 'package:hacksprintps10quadrabyte/Pages/page_host.dart';
@@ -25,9 +26,14 @@ class _LoginViewState extends State<Login> {
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
     AuthProvider auth = Provider.of<AuthProvider>(context);
-    final logo = Image.asset(
+    final logo = Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.only(bottomRight:  Radius.circular(400), bottomLeft:  Radius.circular(400)),
+      ),
+        child: Image.asset(
       "images/logo.jpeg",
       fit: BoxFit.contain,
+    )
     );
 
     final emailField = TextFormField(
@@ -54,6 +60,7 @@ class _LoginViewState extends State<Login> {
             onSaved: (val){
               pass = val;
             },
+            obscureText: true,
             controller: _passwordController,
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
@@ -68,21 +75,7 @@ class _LoginViewState extends State<Login> {
         Padding(
           padding: EdgeInsets.all(2.0),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: <Widget>[
-            MaterialButton(
-              child: Text(
-                "Forgot password",
-                style: Theme.of(context)
-                    .textTheme
-                    .caption
-                    .copyWith(color: Colors.black),
-              ),
-              onPressed: () {},
-            )
-          ],
-        )
+
       ],
     );
 
@@ -100,7 +93,7 @@ class _LoginViewState extends State<Login> {
     final loginButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(25.0),
-      color: Colors.white,
+      color: Colors.black87,
       child: MaterialButton(
         minWidth: mq.size.width / 1.2,
         padding: EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 15.0),
@@ -109,7 +102,7 @@ class _LoginViewState extends State<Login> {
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 20.0,
-            color: Colors.black,
+            color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -135,7 +128,7 @@ class _LoginViewState extends State<Login> {
           padding: EdgeInsets.all(8),
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
               "Don't have an account?",
@@ -159,16 +152,23 @@ class _LoginViewState extends State<Login> {
       body: Form(
           key: _formKey,
           child: SingleChildScrollView(
-              padding: EdgeInsets.all(36),
+              padding: EdgeInsets.all(0),
               child: Container(
                 height: mq.size.height,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     logo,
-                    fields,
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(topRight:  Radius.circular(400), topLeft:  Radius.circular(400)),
+                      ),
+                      child: Padding(
+                          child: fields,
+                        padding: EdgeInsets.all(36),),
+                    ),
                     Padding(
-                      padding: EdgeInsets.only(bottom: 70),
+                      padding: EdgeInsets.only(bottom: 70, left: 36, right: 36),
                       child: bottom,
                     )
                   ],

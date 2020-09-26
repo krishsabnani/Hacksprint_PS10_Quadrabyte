@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:hacksprintps10quadrabyte/Models/expense_model.dart';
 import 'package:hacksprintps10quadrabyte/Models/user_model.dart';
 import 'package:hacksprintps10quadrabyte/Providers/toasts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthProvider with ChangeNotifier {
 
@@ -39,7 +40,13 @@ class AuthProvider with ChangeNotifier {
 
 
         createUserDoc(user);
-
+        await Firestore.instance.collection("Expense").document(user.uid).setData({
+          "totalMedical" : 0.0,
+          "totalMisc" : 0.0,
+          "totalGrocery" : 0.0,
+          "totalHousehold" : 0.0,
+          "totalTransport" : 0.0
+        });
         isRegistered = true;
       }
     }).catchError((e) {
@@ -147,6 +154,23 @@ class AuthProvider with ChangeNotifier {
       }
 
 
+
   }
+
+  Future<bool> logout() async {
+    try{
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.remove('userUid');
+      prefs.remove('userType');
+      auth.signOut();
+      _toasts.showToast(
+          "You have been Logged Out!", 18);
+      return true;
+    }catch(e){
+      print(e);
+      return false;
+    }
+  }
+
 
 }
