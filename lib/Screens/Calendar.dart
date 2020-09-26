@@ -17,49 +17,53 @@ class _CalendarState extends State<Calendar> {
     AuthProvider authProvider = Provider.of<AuthProvider>(context);
     var mainbody = Scaffold(
       backgroundColor: Colors.white,
-      body: Column(children: <Widget>[
-        Container(
-        height: 150,
-        width: double.infinity,
-        color: Colors.white,
-        child: Center(
-          child: ListTile(
-            leading: Icon(Icons.calendar_today, color: Colors.green),
-            title: Text(
-              "Log your expenses:",
-              style: TextStyle(fontSize: 24),
-            ),
-            subtitle: Text(
-              "Here you can select the exact date for which\nyou would like to log your expenses.",
-              style: TextStyle(fontSize: 15),
+      body: ListView(
+        children: <Widget>[
+          Column(children: <Widget>[
+            Container(
+            height: 150,
+            width: double.infinity,
+            color: Colors.white,
+            child: Center(
+              child: ListTile(
+                leading: Icon(Icons.calendar_today, color: Colors.green),
+                title: Text(
+                  "Log your expenses:",
+                  style: TextStyle(fontSize: 24),
+                ),
+                subtitle: Text(
+                  "Here you can select the exact date for which\nyou would like to log your expenses.",
+                  style: TextStyle(fontSize: 15),
+                ),
+              ),
             ),
           ),
-        ),
-      ),
-      TableCalendar(
-        calendarController: _calendarController,
-        calendarStyle: CalendarStyle(
-            outsideDaysVisible: false,
-            selectedColor: Colors.black,
-            todayColor: Colors.grey,
-            weekendStyle: TextStyle(color: Colors.green),
-            todayStyle: TextStyle(
-              fontWeight: FontWeight.normal,
-              fontSize: 20,
-            )),
-        onDaySelected: (date, events) {
-          print( DateFormat(DateFormat.YEAR_ABBR_MONTH_DAY)
-              .format(date));
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => AddExpense(
-                      authProvider.user.uid,
-                      DateFormat(DateFormat.YEAR_ABBR_MONTH_DAY)
-                          .format(date))));
-        },
-      )
-    ]));
+          TableCalendar(
+            calendarController: _calendarController,
+            calendarStyle: CalendarStyle(
+                outsideDaysVisible: false,
+                selectedColor: Colors.black,
+                todayColor: Colors.grey,
+                weekendStyle: TextStyle(color: Colors.green),
+                todayStyle: TextStyle(
+                  fontWeight: FontWeight.normal,
+                  fontSize: 20,
+                )),
+            onDaySelected: (date, events) {
+              print( DateFormat(DateFormat.YEAR_ABBR_MONTH_DAY)
+                  .format(date));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => AddExpense(
+                          authProvider.user.uid,
+                          DateFormat(DateFormat.YEAR_ABBR_MONTH_DAY)
+                              .format(date))));
+            },
+          )
+    ]),
+        ],
+      ));
 
     var backbutton = IconButton(
       icon: Icon(
