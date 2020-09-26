@@ -1,6 +1,6 @@
 # hacksprintps10quadrabyte
 
-A new Flutter application.
+The link to the presentation for the application is https://prezi.com/view/jgRFm3mzRqG6U0z8jvH8/
 
 ## Getting Started
 
