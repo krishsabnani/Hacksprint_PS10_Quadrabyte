@@ -2,6 +2,8 @@
 
 The link to the presentation for the application is https://prezi.com/view/jgRFm3mzRqG6U0z8jvH8/
 
+The .apk file is available in this repository under the name "finance_app_final.apk".
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
