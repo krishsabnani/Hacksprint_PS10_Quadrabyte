@@ -1,3 +1,4 @@
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hacksprintps10quadrabyte/Pages/login_screen.dart';
 import 'package:hacksprintps10quadrabyte/Pages/register_screen.dart';
 import 'package:hacksprintps10quadrabyte/Pages/routes.dart';
@@ -13,21 +14,26 @@ class OpeningView extends StatelessWidget {
       "images/logo.jpeg",
       fit: BoxFit.contain,
     );
-    final loginButton = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(25.0),
-      color: Colors.white,
+    final loginButton = Container(
+
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25.0),
+        gradient: LinearGradient(
+          colors: [Colors.grey[800], Colors.grey[100]],
+          begin: FractionalOffset.topRight,
+          end: FractionalOffset.bottomLeft,
+        ),
+      ),
       child: MaterialButton(
         minWidth: mq.size.width / 1.2,
         padding: EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 15.0),
         child: Text(
           "Login",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 20.0,
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
+          style: GoogleFonts.openSans(
+              textStyle: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold)),
         ),
         onPressed: () {
           Navigator.push(
@@ -36,21 +42,29 @@ class OpeningView extends StatelessWidget {
       ),
     );
 
-    final registerButton = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(25.0),
-      color: Colors.white,
+    final registerButton = Container(
+
+
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25.0),
+        gradient: LinearGradient(
+          colors: [Colors.grey[800], Colors.grey[100]],
+          begin: FractionalOffset.topRight,
+          end: FractionalOffset.bottomLeft,
+        ),
+      ),
+
       child: MaterialButton(
+
         minWidth: mq.size.width / 1.2,
         padding: EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 15.0),
         child: Text(
           "Register",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 20.0,
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
+          style: GoogleFonts.openSans(
+              textStyle: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold)),
         ),
         onPressed: () {
           Navigator.push(
@@ -64,7 +78,7 @@ class OpeningView extends StatelessWidget {
       children: <Widget>[
         loginButton,
         Padding(
-          padding: EdgeInsets.fromLTRB(0, 15, 0, 70),
+          padding: EdgeInsets.fromLTRB(0, 40, 0, 70),
           child: registerButton,
         ),
       ],
@@ -78,9 +92,7 @@ class OpeningView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             logo,
-            Padding(
-              padding: EdgeInsets.only(top: 50),
-            ),
+
             buttons,
           ],
         ),

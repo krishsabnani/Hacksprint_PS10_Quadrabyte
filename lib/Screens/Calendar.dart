@@ -24,7 +24,7 @@ class _CalendarState extends State<Calendar> {
         color: Colors.white,
         child: Center(
           child: ListTile(
-            leading: Icon(Icons.calendar_today),
+            leading: Icon(Icons.calendar_today, color: Colors.green),
             title: Text(
               "Log your expenses:",
               style: TextStyle(fontSize: 24),

@@ -3,9 +3,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hacksprintps10quadrabyte/Pages/page_host.dart';
 import 'package:hacksprintps10quadrabyte/Providers/auth_provider.dart';
 import 'package:hacksprintps10quadrabyte/Providers/expense_provider.dart';
 import 'package:hacksprintps10quadrabyte/Screens/AddExpense.dart';
+import 'package:hacksprintps10quadrabyte/Screens/report.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'dashboard.dart';
@@ -60,19 +62,23 @@ class HomeState extends State<Home> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text(
-                            "Welcome, " + authProvider.user.name,
-                            style: GoogleFonts.openSans(
-                                textStyle: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 35,
-                                    fontWeight: FontWeight.bold)),
+                          Container(
+                            child: Text(
+                              "Welcome, " + authProvider.user.name,
+                              style: GoogleFonts.openSans(
+                                  textStyle: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 35,
+                                      fontWeight: FontWeight.bold)),
+                              overflow: TextOverflow.clip,
+                            ),
+                            width: MediaQuery.of(context).size.width/1.2,
                           ),
 //                    SizedBox(
 //                      height: 4,
 //                    ),
                           Text(
-                            "User dashboard",
+                            "User Dashboard",
                             style: GoogleFonts.openSans(
                                 textStyle: TextStyle(
                                     color: Color(0xffa29aac),
@@ -320,6 +326,12 @@ class HomeState extends State<Home> {
                                           ),
                                           Center(
                                             child: IconButton(
+                                              onPressed: (){
+                                                Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) => PageHost(2)));
+                                              },
                                               icon: Icon(
                                                 Icons.insert_drive_file,
                                                 color: Colors.lightGreen,
