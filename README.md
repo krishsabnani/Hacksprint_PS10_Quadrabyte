@@ -83,7 +83,7 @@ However, due to time constraints as well prioritizing points mentioned on the pr
 Moving along, due to the use of different coding environments on individual machines, integration of code on GitHub was a challenge, which was later over come by establishing an ad-hoc branch (next-release) that acted as and intermediary between the individual and master branch.
 We also worked extensively via screen share to mitigate aforementioned integration errors.
 
-# Improvements & Changes
+
 # Improvements & Solution
 
 Initially the application consisted of varying colors and no set design was followed.
@@ -91,7 +91,7 @@ Later, the application was styled using a simple and elegant design theme which 
 Also, the unrouted pages were appropriately linked with the buttons so as to follow protocol and disabled the functionality of an unregistered user attempting to navigate through the application.
 
 # Finished application:
-# Demo
+
 After 2 days of tireless coding, documenting and encountering obstacles, we were able to develop the application which checked all the pointers mentioned in the problem statement. To conclude the process, we have attached screenshots which represent the final application.
 
 https://rb.gy/fcfb7u
